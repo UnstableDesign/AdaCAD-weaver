@@ -1,0 +1,22 @@
+<div>
+  <div class = "Block">
+    <label id = "lbl" > File 1</label>
+    <input type="file" (change)= "fileChanged($event)"> <p>type-ty type type</p>
+  </div>
+
+  <script>
+  file: any;
+  fileChanged(e){
+  this.file = e.target.files[0];
+  }
+
+  uploadDocument(file){
+  let fileReader = new FileReader();
+  fileReader.onload = (e) => {
+  console.log(fileReader.result);
+  }
+  fileReader.readAsText(this.file);
+  }
+  </script>
+
+</div>
