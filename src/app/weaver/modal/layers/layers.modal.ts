@@ -13,13 +13,13 @@ import * as g from 'g.js';
 export class LayersModal {
   layer: Layer;
   warps: number;
-  // layer = {
-  //   name: 'Layer 0',
-  //   id: 0,
-  //   thickness: 0,
-  //   color: '#000000',
-  //   type: 'regular',
-  // }
+   layer = {
+     name: 'Layer 0',
+     id: 0,
+     thickness: 0,
+    color: '#000000',
+     type: 'regular',
+   }
 
   types = ['regular', 'conductive', 'thermo'];
 

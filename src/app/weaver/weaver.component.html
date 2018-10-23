@@ -27,7 +27,7 @@
         (onCreatePattern)="createPattern($event);"></app-patterns>  
       </mat-tab>
       <mat-tab label="Data">
-
+        <app-data *ngIf="selected === 3"></app-data> 
         <!-- <app-data *ngIf="selected === 3" [data]="data"
         (onChange)="updatePatterns($event);"></app-data>  -->
       </mat-tab>

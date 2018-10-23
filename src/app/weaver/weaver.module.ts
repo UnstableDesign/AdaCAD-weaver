@@ -34,6 +34,9 @@ import { ConnectionModal } from './modal/connection/connection.modal';
 import { InitModal } from './modal/init/init.modal';
 import { LabelModal } from './modal/label/label.modal';
 
+import { DataComponent } from './tool/data/data.component';
+import { DataModal} from './modal/data/data.modal';
+
 
 @NgModule({
   imports: [
@@ -67,9 +70,11 @@ import { LabelModal } from './modal/label/label.modal';
     DesignComponent, 
     LayersComponent, 
     PatternsComponent,
+    DataComponent,
     LayersModal,
     PatternModal,
     ConnectionModal,
+    DataModal,
     InitModal,
     LabelModal
   ],
@@ -77,6 +82,7 @@ import { LabelModal } from './modal/label/label.modal';
     LayersModal,
     PatternModal,
     ConnectionModal,
+    DataModal,
     InitModal,
     LabelModal
   ],
