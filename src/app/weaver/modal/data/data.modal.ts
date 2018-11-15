@@ -7,7 +7,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
   styleUrls: ['./data.modal.scss']
 })
 export class DataModal {
-
+	//data can go here
   constructor(private dialogRef: MatDialogRef<DataModal>) {
 
   }

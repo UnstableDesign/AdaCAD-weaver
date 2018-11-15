@@ -36,7 +36,9 @@ import { LabelModal } from './modal/label/label.modal';
 
 import { DataComponent } from './tool/data/data.component';
 import { DataModal} from './modal/data/data.modal';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { ChartsModule } from 'ng4-charts/ng4-charts';
+import { PapaParseModule } from 'ngx-papaparse';
 
 @NgModule({
   imports: [
@@ -44,6 +46,9 @@ import { DataModal} from './modal/data/data.modal';
     CoreModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserModule,
+    ChartsModule,
+    PapaParseModule,
 
     MatButtonModule,
     MatButtonToggleModule,
@@ -76,7 +81,7 @@ import { DataModal} from './modal/data/data.modal';
     ConnectionModal,
     DataModal,
     InitModal,
-    LabelModal
+    LabelModal, 
   ],
   entryComponents: [
     LayersModal,

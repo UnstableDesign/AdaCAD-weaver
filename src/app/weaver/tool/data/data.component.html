@@ -1,24 +1,125 @@
-<div>
-  <div class = "Block">
-    <label id = "lbl" > File 3</label>
-    <input type="file" (change)= "fileChanged($event)"> <p>type-ty type type</p>
-  </div>
+<div style="text-align: center">
+	<div>
+		<h3> Import File </h3>
+	</div>
+	<br>
+	<!--Import File Buttons-->
+	<div>
+		<input type='file' (change)="onSelectFile($event)">
+	</div>
+	<br>
+	
+	<!--Read Json Array-->
+	<p id = "demo"></p> 
 
-  <!--<script>
-  file: any;ßß
-  fileChanged(e){
-  this.file = e.target.files[0];
-  }
+	<script>
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200){
+			var myArr = Json.parse (this.responseText);
+			document.getElementById("demo")innerHTML = myArr[0]
+		}
+	};
 
-  uploadDocument(file){
-  let fileReader = new FileReader();
-  fileReader.onload = (e) => {
-  console.log(fileReader.result);
-  }
-  fileReader.readAsText(this.file);
-  }
-  </script>
+	var 
+	</script>
 
--->
 
+
+
+	<br>
+	<p> Choose the attributes you would like to design with. <p>
+
+	<div>s
+		<mat-form-field>
+		  <select matNativeControl required [formControl]="selectFormControl">
+		    <option label="-- color variable--"></option>
+		    <option value="saab">Time</option>
+		    <option value="mercedes">Temperature</option>
+		    <option value="audi">Voltage</option>
+		  </select>
+		  <mat-error *ngIf="selectFormControl.hasError('required')">
+		    This field is not valid
+		  </mat-error>
+		</mat-form-field>
+
+		<mat-form-field>
+		  <select matNativeControl required [formControl]="selectFormControl">
+		    <option label="--stitch variable --"></option>
+		    <option value="saab">Time</option>
+		    <option value="mercedes">Temperature</option>
+		    <option value="audi">Voltage</option>
+		  </select>
+		  <mat-error *ngIf="selectFormControl.hasError('required')">
+		    This field is not valid
+		  </mat-error>
+		</mat-form-field>
+	</div>
+	
+	<mat-expansion-panel>
+	  <mat-expansion-panel-header>
+	    <mat-panel-title>
+	      Color 
+	    </mat-panel-title>
+	    <mat-panel-description>
+	      Attribute 1
+	    </mat-panel-description>
+	  </mat-expansion-panel-header>
+
+	  <p>This is the primary content of the panel.</p>
+
+	</mat-expansion-panel>
+	<mat-expansion-panel>
+	  <mat-expansion-panel-header>
+	    <mat-panel-title>
+	      Stitch 
+	    </mat-panel-title>
+	    <mat-panel-description>
+	      Attribute 2
+	    </mat-panel-description>
+	  </mat-expansion-panel-header>
+
+	  <p>This is the primary content of the panel.</p>
+
+	</mat-expansion-panel>
+
+	<br>
+	<div>
+		<button (click)="randomize()">See File</button>
+		<button (click)="randomize()" >See Graph</button>
+		<button (click)="randomize()" >See Histogram</button>
+	</div>
+
+	<br>
+
+	<!--Chart
+	<div class="row">
+	  <div class="col-md-6">
+	    <div style="display: block;">
+	    <canvas baseChart width="400" height="400"
+	                [datasets]="lineChartData"
+	                [labels]="lineChartLabels"
+	                [options]="lineChartOptions"
+	                [colors]="lineChartColors"
+	                [legend]="lineChartLegend"
+	                [chartType]="lineChartType"
+	                (chartHover)="chartHovered($event)"
+	                (chartClick)="chartClicked($event)"></canvas>
+	    </div>
+	  </div>
+	  <div class="col-md-6" style="margin-bottom: 10px">
+	    <table class="table table-responsive table-condensed">
+	      <tr>
+	        <th *ngFor="let label of lineChartLabels">{{label}}</th>
+	      </tr>
+	      <tr *ngFor="let d of lineChartData">
+	        <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
+	      </tr>
+	    </table>
+	  </div>
+	</div>-->
+	<button (click)="randomize()">Design</button>
 </div>
+
+
+
