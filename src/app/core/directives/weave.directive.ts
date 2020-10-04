@@ -743,7 +743,16 @@ export class WeaveDirective {
         }
       }
     }
-
+    this.weave.threading.updateFlippedPatternFromArray(this.weave.pattern);
+    this.weave.tieups.updatePattern(this.weave.pattern);
+    this.weave.threading.updateThreading();
+    this.weave.tieups.updateThreading(this.weave.threading.threading);
+    this.weave.treadling.updateTreadling();
+    this.weave.tieups.updateTreadling(this.weave.treadling.treadling);
+    this.weave.tieups.updateTieUps();
+    this.redrawThreading();
+    this.redrawTreadling();
+    this.redrawTieups();
   }
 
   private undoRedoSegment() {

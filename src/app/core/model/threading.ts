@@ -70,7 +70,6 @@ export class Threading {
             column_tracker.push(warp_thread);
           }
         }
-
         for (var c = 0; c < this.flipped_pattern.length; c++) {
           var contains = false;
           for (var i = 0; i < marked_strings.length;i++) {
@@ -121,6 +120,17 @@ export class Threading {
     */
     updateFlippedPattern(row:number, j:number, bool:boolean) {
         this.flipped_pattern[j][row] = bool;
+    }
+
+    updateFlippedPatternFromArray(pattern: Array<Array<boolean>>) {
+      this.flipped_pattern = [];
+
+      for(var i = 0; i < this.warps; i++) {
+        this.flipped_pattern.push([]);
+        for (var j = 0; j < this.wefts; j++) {
+          this.flipped_pattern[i].push(pattern[j][i]);
+        }
+      }
     }
     
     /* Input: None
